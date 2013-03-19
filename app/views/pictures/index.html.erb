@@ -1,1 +1,10 @@
 <h1>Hello!</h1>
+
+<%- @pictures.each do |picture| %>
+	<p>
+		<img src="<%= picture %>">
+	</p>
+	<% end %>
+<p><%= "hello from ruby" %></p>
+<p><%= 1 + 1 %></p>
+<p><%= @greeting.upcase %></p>
