@@ -1,6 +1,15 @@
 class PicturesController < ApplicationController		# NOT:ActionController::Base
+	before_filter :load_pictures
 
 	def index
+
+	end
+
+	def show
+		@picture = @pictures[params[:id].to_i]
+	end
+
+	def load_pictures
 		@pictures = [
 			{
 			 :title =>"Stay classy Planet Earth",
@@ -19,4 +28,5 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 			}
 	   ]
 	end
+
 end

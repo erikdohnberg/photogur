@@ -1,1 +1,11 @@
-erik.css
+body {
+	font-family: 'helvetica neue';
+}
+
+h1 {
+	font-weight: bold;
+}
+
+h2 {
+	margin: 0;
+}
