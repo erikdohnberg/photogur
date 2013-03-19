@@ -2,7 +2,6 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	before_filter :load_pictures
 
 	def index
-
 	end
 
 	def show
