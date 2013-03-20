@@ -33,13 +33,11 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# Get the picture I want to update
 		@picture = Picture.find params[:id]
 		# Get the new data for the picture
-		success = @picture.update_attributes(:title => params[:title], :url => params[:url], :artist => params[:artist])
-		# Old, working way
-		# @picture.url = params[:url]
-		# @picture.title = params[:title]
-		# @picture.artist = params[:artist]
-		# @picture.save
-		# Redirect to the picture after posting changes
+		success = @picture.update_attributes(
+			:title => params[:title], 
+			:url => params[:url], 
+			:artist => params[:artist]
+			)
 		if success
 			redirect_to '/pictures/show'
 		else
