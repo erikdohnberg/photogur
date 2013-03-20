@@ -22,7 +22,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 			if success
 				redirect_to '/pictures'
 			end		
-		render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 
 	end
 
