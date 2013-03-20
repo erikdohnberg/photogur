@@ -23,28 +23,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 				redirect_to '/pictures'
 			end		
 		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
-
 	end
-
-	# def load_pictures
-	# 	# @pictures = [
-	# 	# 	{
-	# 	# 	 :title =>"Stay classy Planet Earth",
-	# 	# 	 :artist =>"Irfan",
-	# 	# 	 :url =>"http://distilleryimage11.s3.amazonaws.com/20f21366904511e2bbd422000a1f9ab2_7.jpg"
-	# 	#     },
-	# 	#     {
-	# 	# 	 :title =>"'Poo' Super Class Method",
-	# 	# 	 :artist =>"Hamant",
-	# 	# 	 :url =>"http://distilleryimage6.s3.amazonaws.com/8158dad88c5211e282e022000a1fbc68_7.jpg"
-	# 	# 	},
-	# 	# 	{
-	# 	# 	 :title =>"Hamant Impersonations",
-	# 	# 	 :artist =>"Hamant",
-	# 	# 	 :url =>"http://distilleryimage7.s3.amazonaws.com/f8bcd6528c5111e28b6c22000a1f8db8_7.jpg"
-	# 	# 	}
-	#  #   ]
-	# end
 
 	def edit
 		@picture = Picture.find params[:id]
@@ -54,17 +33,18 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# Get the picture I want to update
 		@picture = Picture.find params[:id]
 		# Get the new data for the picture
-		@picture.update_attributes(:title => params[:title], params[:url], params[:artist])
+		success = @picture.update_attributes(:title => params[:title], :url => params[:url], :artist => params[:artist])
 		# Old, working way
 		# @picture.url = params[:url]
 		# @picture.title = params[:title]
 		# @picture.artist = params[:artist]
-		@picture.save
+		# @picture.save
 		# Redirect to the picture after posting changes
-		success = @picture.save
-			if success
-				redirect_to '/pictures'
-			end	
+		if success
+			redirect_to '/pictures/show'
+		else
+			redirect_to '/pictures'
+		end	
 	end
 
 
