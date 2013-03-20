@@ -2,11 +2,13 @@ Photogur::Application.routes.draw do
 
   get 'pictures' => 'pictures#index'
 
+# Post vs Get
+# Post sends information to the server instead of just getting information
+#
   get 'pictures/new' => 'pictures#new'
   post 'pictures' => 'pictures#create'
 
   get 'pictures/:id' => 'pictures#show'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
