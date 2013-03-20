@@ -13,7 +13,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	end
 
 	def create
-		@picture = Picture.new # params[:url, :title, :artist]
+		@picture = Picture.new
 		@picture.url = params[:url]
 		@picture.title = params[:title]
 		@picture.artist = params[:artist]
@@ -45,5 +45,22 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	# 	# 	}
 	#  #   ]
 	# end
+
+	def edit
+		@picture = Picture.find params[:id]
+	end
+
+	def update
+		@picture = Picture.find params[:id]
+		@picture.url = params[:url]
+		@picture.title = params[:title]
+		@picture.artist = params[:artist]
+		@picture.save
+		success = @picture.save
+			if success
+				redirect_to '/pictures'
+			end	
+	end
+
 
 end
