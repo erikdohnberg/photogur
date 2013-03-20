@@ -1,9 +1,9 @@
 <h1>Pictures</h1>
 <hr>
 <%- @pictures.each do |picture| %>
-	<h2><%= picture[:title] %></h2>
-	<p>Artist: <%= picture[:artist] %></p>
-	<p><img src="<%= picture[:url] %>"></p>
+	<h2><%= picture.title %></h2>
+	<p>Artist: <%= picture.artist %></p>
+	<p><img src="<%= picture.url %>"></p>
 	<hr>
 <% end %>
 
