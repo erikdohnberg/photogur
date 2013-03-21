@@ -1,17 +1,25 @@
 Photogur::Application.routes.draw do
 
   root :to => 'pictures#index'
-  get 'pictures' => 'pictures#index'
 
-  get 'pictures/:id/edit' => 'pictures#edit'
-  post 'pictures/:id' => 'pictures#update'
-# Post vs Get
-# Post sends information to the server instead of just getting information
-#
-  get 'pictures/new' => 'pictures#new'
-  post 'pictures' => 'pictures#create'
+  resources :pictures
 
-  get 'pictures/:id' => 'pictures#show'
+#The below code is a more tedious way of writing what is above
+
+    #   get 'pictures' => 'pictures#index'
+
+    #   get 'pictures/:id/edit' => 'pictures#edit'
+    #   post 'pictures/:id' => 'pictures#update'
+
+      # Post vs Get
+      # Post sends information to the server instead of just getting information
+
+    #   get 'pictures/new' => 'pictures#new'
+    #   post 'pictures' => 'pictures#create'
+
+    #   get 'pictures/:id' => 'pictures#show'
+
+# -----------------------------------------------
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

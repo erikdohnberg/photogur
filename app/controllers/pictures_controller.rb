@@ -14,15 +14,20 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	end
 
 	def create
-		@picture = Picture.new
-		@picture.url = params[:url]
-		@picture.title = params[:title]
-		@picture.artist = params[:artist]
-		@picture.save
-		success = @picture.save
-			if success
-				redirect_to '/pictures'
-			end		
+		#Old way of doing this
+		# @picture = Picture.new
+		# @picture.url = params[:url]
+		# @picture.title = params[:title]
+		# @picture.artist = params[:artist]
+		# @picture.save
+		# success = @picture.save
+
+		# New way of doing this:
+		if Picture.create(params[:picture])
+		# Which is basically the same as this:
+		# @picture.create(:url => params[:url], :title => params[:title]...)
+			redirect_to '/pictures'
+		end		
 		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
 
