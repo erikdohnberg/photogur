@@ -41,8 +41,13 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	def update
 		# Get the picture I want to update
 		@picture = Picture.find params[:id]
+		# :id are created by the URL and :picture is created by the form
+			# therefore they are separate elements of the param hash
+
 		# Get the new data for the picture
 		if @picture.update_attributes(params[:picture])
+			redirect_to '/pictures#{@picture.id}'
+		else
 			redirect_to '/pictures'
 		end
 		# success = @picture.update_attributes(
