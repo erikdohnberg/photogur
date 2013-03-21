@@ -1,5 +1,6 @@
 <h1>Edit a picture</h1>
-<form action="/pictures/<%= @picture.id %>" method="POST">
+<!-- <form action="/pictures/<%= @picture.id %>" method="POST"> -->
+<%= form_tag "/pictures" do %>
 
 	<label>Artist</label>
 	<p><input type="text" name="artist" value="<%= @picture.artist %>"></p>
@@ -12,4 +13,5 @@
 
 	<p><input type="submit" value="Destroy!"/></p>
 
-</form>
+<!-- </form> -->
+<%= end %>

@@ -39,7 +39,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 			:artist => params[:artist]
 			)
 		if success
-			redirect_to '/pictures/show'
+			redirect_to '/pictures'
 		else
 			redirect_to '/pictures'
 		end	
