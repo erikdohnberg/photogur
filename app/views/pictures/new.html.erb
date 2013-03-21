@@ -6,17 +6,18 @@
 
 	<label>Artist</label>
 	<!-- <p><input type="text" name="artist"/></p> -->
-	<p><%= f.textfield "artist" %></p>
+	<p><%= f.text_field "artist" %></p>
 
 	<label>Title</label>
 	<!-- <p><input type="text" name="title"/></p> -->
-	<p><%= f.textfield "title" %></p>
+	<p><%= f.text_field "title" %></p>
 	
 	<label>Image URL</label>
 	<!-- <p><input type="text" name="url"/></p> -->
-	<p><%= f.textfield "url" %></p>
+	<p><%= f.text_field "url" %></p>
 
-	<p><input type="submit" value="Bit It!"/></p>
+	<!-- <p><input type="submit" value="Bit It!"/></p> -->
+	<p><%= f.submit "Bit It!" %></p>
 	
 <!-- </form> -->
 <% end %>
