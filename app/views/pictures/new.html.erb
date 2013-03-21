@@ -1,20 +1,22 @@
-<h1>Add a picture</h1>
+<h1>Add a picture to
+	<br>Bitmaker Labs
+</h1>
 <!-- <form action="/pictures" method="POST"> -->
-<%= form_tag "/pictures" do %>
+<%= form_for @picture do |f| %>
 
 	<label>Artist</label>
 	<!-- <p><input type="text" name="artist"/></p> -->
-	<p><%= text_field_tag "artist" %></p>
+	<p><%= f.textfield "artist" %></p>
 
 	<label>Title</label>
 	<!-- <p><input type="text" name="title"/></p> -->
-	<p><%= text_field_tag "title" %></p>
+	<p><%= f.textfield "title" %></p>
 	
 	<label>Image URL</label>
 	<!-- <p><input type="text" name="url"/></p> -->
-	<p><%= text_field_tag "url" %></p>
+	<p><%= f.textfield "url" %></p>
 
-	<p><input type="submit"/></p>
+	<p><input type="submit" value="Bit It!"/></p>
 	
 <!-- </form> -->
 <% end %>

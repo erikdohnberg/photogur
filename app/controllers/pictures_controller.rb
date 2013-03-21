@@ -10,6 +10,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	end
 
 	def new
+		@picture = Picture.new
 	end
 
 	def create
