@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="header">
 
-<%= yield %>
+	</div>
+
+	<div class="nav">
+		<ul>
+			<li><%= link_to "Pictures", pictures_path %></li>
+			<li><%= link_to "Add New Picture", new_picture_path %></li>
+		</ul>
+		<div class="clear"></div>
+	<div class="container">
+		<!-- Yield renders the contents of the actions within it -->
+		<%= yield %>
+
+
+	</div>
 
 </body>
 </html>

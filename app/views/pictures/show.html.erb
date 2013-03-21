@@ -1,12 +1,13 @@
 <p>
-	<h1><%= @picture[:title] %></h1>
+	<!-- Try putting the image title in the header -->
+	<!-- 	<h1><%= @picture[#:title] %></h1> -->
 	Artist: <%= @picture[:artist] %>
 </p>
 <p>
 <img src="<%= @picture[:url] %>"/>
 </p>
 <p>
-	<a href="<%= pictures_path %>">Back to Pictures</a> | 
-	<a href="<%= edit_picture_path(@picture) %>">Edit Picture</a> | 
+<!-- 	<a href="<%= pictures_path %>">Back to Pictures</a> |  -->
+	<%= button_to "Edit Picture", edit_picture_path(@picture), :method => :get %> | 
 	<!-- <a href="<%= (@picture) %>">Delete Picture</a> --> <!-- ???? -->
 </p>

@@ -30,6 +30,11 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# Look at the documentation for 'create' to understand
 		# the differences and why this is better
 			redirect_to pictures_path # See update method for more information
+		else
+			flash.now[:error] = "Did not save the picture!"
+			render :new 
+			# NOT 'redirect_to new_picture_path' because it will delete any data the
+			#user has put into the form because it's recreating the picture.new def
 		end		
 		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end

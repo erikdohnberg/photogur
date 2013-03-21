@@ -1,6 +1,11 @@
-<h1>Add a picture to
+<!-- <h1>Add a picture to
 	<br>Bitmaker Labs
-</h1>
+</h1> -->
+
+<div class="error">
+	<%= flash[:error] %>
+</div>
+
 <%= form_for @picture do |f| %>
 
 	<p>
@@ -10,11 +15,18 @@
 	
 	<p>
 		<label>Title</label><br>
+		<% if @picture.errors.messages[:title] %>
+		    <div class="error">Field <%= @picture.errors.messages[:title][0] %>!</div>
+		    <% end %>
+
 		<%= f.text_field "title" %>
 	</p>
 
 	<p>
 		<label>Image URL</label><br>
+		<% if @picture.errors.messages[:url] %>
+		    <div class="error">Field <%= @picture.errors.messages[:url][0] %>!</div>
+		    <% end %>
 		<%= f.text_field "url" %>
 	</p>
 
