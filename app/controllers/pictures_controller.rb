@@ -23,10 +23,13 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# success = @picture.save
 
 		# New way of doing this:
-		if Picture.create(params[:picture])
+		@picture = Picture.new(params[:picture])
+		if @picture.save
 		# Which is basically the same as this:
 		# @picture.create(:url => params[:url], :title => params[:title]...)
-			redirect_to '/pictures'
+		# Look at the documentation for 'create' to understand
+		# the differences and why this is better
+			redirect_to '/pictures' #pictures_path
 		end		
 		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
@@ -39,16 +42,19 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# Get the picture I want to update
 		@picture = Picture.find params[:id]
 		# Get the new data for the picture
-		success = @picture.update_attributes(
-			:title => params[:title], 
-			:url => params[:url], 
-			:artist => params[:artist]
-			)
-		if success
+		if @picture.update_attributes(params[:picture])
 			redirect_to '/pictures'
-		else
-			redirect_to '/pictures'
-		end	
+		end
+		# success = @picture.update_attributes(
+		# 	:title => params[:title], 
+		# 	:url => params[:url], 
+		# 	:artist => params[:artist]
+		# 	)
+		# if success
+		# 	redirect_to '/pictures'
+		# else
+		# 	redirect_to '/pictures'
+		# end	
 	end
 
 
