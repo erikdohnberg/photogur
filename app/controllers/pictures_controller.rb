@@ -29,7 +29,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# @picture.create(:url => params[:url], :title => params[:title]...)
 		# Look at the documentation for 'create' to understand
 		# the differences and why this is better
-			redirect_to '/pictures' #pictures_path
+			redirect_to pictures_path # See update method for more information
 		end		
 		# render :text => "Saving a picture. Url: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
@@ -46,9 +46,14 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 
 		# Get the new data for the picture
 		if @picture.update_attributes(params[:picture])
-			redirect_to '/pictures#{@picture.id}'
+			# Named routes are convernience methods created by
+			#ruby to help us navigate the application
+			redirect_to @picture
+			# redirect_to pictures_path(@picture.id) is the same thing
+			# redirect_to '/pictures#{@picture.id}' is the same thing
 		else
-			redirect_to '/pictures'
+			redirect_to pictures_path
+			# redirect_to '/pictures' is the same thing
 		end
 		# success = @picture.update_attributes(
 		# 	:title => params[:title], 

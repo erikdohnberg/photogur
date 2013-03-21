@@ -1,9 +1,20 @@
 <h1>Bitmaker Labs Pictures</h1>
+<a href="<%= new_picture_path %>">Add Picture</a>
 <hr>
 <%- @pictures.each do |picture| %>
-	<h2><%= picture.title %></h2>
-	<p>Artist: <%= picture.artist %></p>
-	<p><img src="<%= picture.url %>"></p>
+	<p>
+		<a href="<%= picture_path(picture) %>">
+			<h2><%= picture.title %></h2>
+			<br>
+			Artist: <%= picture.artist %>
+			<p>
+				<img src="<%= picture.url %>">
+			</p>
+		</a>
+			<p>
+				<a href=" <%= edit_picture_path(picture) %>">Edit Picture</a>
+			</p>
+	</p>
 	<hr>
 <% end %>
 
