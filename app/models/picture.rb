@@ -1,7 +1,7 @@
 class Picture < ActiveRecord::Base
 	# Very different from accr_accessor!!
 	# Allows mass-assignment for the attributes title and artist
-	attr_accessible :title, :artist, :url
+	attr_accessible :title, :artist, :url, :copyrighted
 
 	validates :title, :presence => true
 	validates :url, { # this hash was added because it is actually calling a 
