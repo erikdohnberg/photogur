@@ -24,6 +24,12 @@
 		    <% end %>
 		<%= f.text_field "url" %>
 	</p>
+	<p>
+
+		<!-- Done this way so user can click on text to implement check as well -->
+		<%= f.check_box "copyrighted" %>
+		<label for="picture_copyrighted">Photo is copyrighted</label><br>
+	</p>
 
 	<p><%= f.submit "Bit it!!" %></p>
 
