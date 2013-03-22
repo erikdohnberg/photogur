@@ -4,7 +4,7 @@ class AddCopyrightToPictures < ActiveRecord::Migration
 
 # Used to automatically assign whether or not all images are copyrighted
   	# Picture.all.each do |picture|
-  	# 	picture.copyrighted = false
+  	# 	picture.copyrighted = true
   	# 	picture.save!
   	# end
   	
