@@ -4,6 +4,13 @@ class Picture < ActiveRecord::Base
 	attr_accessible :title, :artist, :url
 
 	validates :title, :presence => true
-	validates :url, :presence => true
+	validates :url,  { # this hash was added because it is actually calling a 
+						# second parameter and it is normally just implied to exist
+						# We are including it this time because it is more readable this way
+		:presence => true
+		:format => {
+			:with => /^https?:/, :message =>"Please enter a valid URL"
+		}
+	}
 
 end
