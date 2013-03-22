@@ -1,19 +1,18 @@
 <!-- <h1>Bitmaker Labs Pictures</h1> -->
-<hr>
+	<hr>
 <%- @pictures.each do |picture| %>
+	<h2><%= picture.title %></h2>
+	Artist: <%= picture.artist %>
 	<p>
-			<h2><%= picture.title %></h2>
-			<br>
-			Artist: <%= picture.artist %>
-			<p>
-				<%= link_to picture_path(picture) do %>
-				<img src="<%=picture.url%>">
-				<% end %>
-			</p>
-		</a>
-			<p>
-				<%= button_to "Edit Picture", edit_picture_path(picture), :method => :get %>
-			</p>
+		<%= link_to picture_path(picture) do %>
+		<img src="<%=picture.url%>">
+		<% end %>
+	</p>
+	<% if picture.copyrighted %>
+		<p>This picture is copyrighted.</p>
+	<% end %>
+	<p>
+		<%= button_to "Edit Picture", edit_picture_path(picture), :method => :get %>
 	</p>
 	<hr>
 <% end %>

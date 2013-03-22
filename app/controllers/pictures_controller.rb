@@ -2,7 +2,11 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	# before_filter :load_pictures
 
 	def index
-		@pictures = Picture.all
+		if params[:free] == "yes"
+			@pictures = Picture.free.alphabetical.all
+		else
+			@pictures = Picture.alphabetical.all
+		end
 	end
 
 	def show
@@ -14,7 +18,7 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 	end
 
 	def create
-		#Old way of doing this
+		# Old way of doing this:
 		# @picture = Picture.new
 		# @picture.url = params[:url]
 		# @picture.title = params[:title]
