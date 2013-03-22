@@ -3,4 +3,7 @@
 <p>Artist: <%= @picture.artist %></p>
 <p>
 <img src="<%= @picture.url %>"/>
+<% if @picture.copyrighted %>
+	<p>This picture is copyrighted.</p>
+<% end %>
 </p>
