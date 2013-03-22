@@ -2,34 +2,8 @@
 	<br>Bitmaker Labs
 </h1> -->
 
-<div class="error">
-	<%= flash[:error] %>
-</div>
+<%= render :partial => "error" %>
 
-<%= form_for @picture do |f| %>
+<!-- Pulling information from the "_form" file!! -->
+<%= render :partial => "form" %>
 
-	<p>
-		<label>Artist</label><br>
-		<%= f.text_field "artist" %>
-	</p>
-	
-	<p>
-		<label>Title</label><br>
-		<% if @picture.errors.messages[:title] %>
-		    <div class="error">Field <%= @picture.errors.messages[:title][0] %>!</div>
-		    <% end %>
-
-		<%= f.text_field "title" %>
-	</p>
-
-	<p>
-		<label>Image URL</label><br>
-		<% if @picture.errors.messages[:url] %>
-		    <div class="error">Field <%= @picture.errors.messages[:url][0] %>!</div>
-		    <% end %>
-		<%= f.text_field "url" %>
-	</p>
-
-	<p><%= f.submit "Bit it!!" %></p>
-	
-<% end %>

@@ -1,0 +1,30 @@
+<!-- Called a partial. Inserts code from one page into another page -->
+<!-- Underscore at beginning of file name is convention in order to sort partials (we will be using multiple partials in order to organize and reuse code) -->
+
+<%= form_for @picture do |f| %>
+
+	<p>
+		<label>Artist</label><br>
+		<%= f.text_field "artist" %>
+	</p>
+	
+	<p>
+		<label>Title</label><br>
+		<% if @picture.errors.messages[:title] %>
+		    <div class="error">Field <%= @picture.errors.messages[:title][0] %>!</div>
+		    <% end %>
+
+		<%= f.text_field "title" %>
+	</p>
+
+	<p>
+		<label>Image URL</label><br>
+		<% if @picture.errors.messages[:url] %>
+		    <div class="error">Field <%= @picture.errors.messages[:url][0] %>!</div>
+		    <% end %>
+		<%= f.text_field "url" %>
+	</p>
+
+	<p><%= f.submit "Bit it!!" %></p>
+
+<% end %>
