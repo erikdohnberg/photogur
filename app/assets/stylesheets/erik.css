@@ -4,6 +4,10 @@ body {
 	background-color: black;
 }
 
+.header {
+	text-align: center;
+}
+
 h1 {
 	font-weight: bold;
 }
@@ -29,6 +33,10 @@ a {
 .nav ul li {
   list-style: none;
   /*float: left;*/
+}
+
+.nav li{
+	float:left;
 }
 
 .nav a {
