@@ -1,13 +1,6 @@
+<% link_to "Delete", @picture, :method => :delete, :confirm => "Are you sure you want to delete this picture?" %>
+
+<p>Artist: <%= @picture.artist %></p>
 <p>
-	<!-- Try putting the image title in the header -->
-	<!-- 	<h1><%= @picture[#:title] %></h1> -->
-	Artist: <%= @picture[:artist] %>
-</p>
-<p>
-<img src="<%= @picture[:url] %>"/>
-</p>
-<p>
-<!-- 	<a href="<%= pictures_path %>">Back to Pictures</a> |  -->
-	<%= button_to "Edit Picture", edit_picture_path(@picture), :method => :get %> | 
-	<!-- <a href="<%= (@picture) %>">Delete Picture</a> --> <!-- ???? -->
+<img src="<%= @picture.url %>"/>
 </p>

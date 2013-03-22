@@ -3,6 +3,7 @@ Photogur::Application.routes.draw do
   root :to => 'pictures#index'
 
   resources :pictures
+  
 
 #The below code is a more tedious way of writing what is above
 

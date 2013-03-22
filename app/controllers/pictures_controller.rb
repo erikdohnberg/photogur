@@ -70,6 +70,12 @@ class PicturesController < ApplicationController		# NOT:ActionController::Base
 		# else
 		# 	redirect_to '/pictures'
 		# end	
+
+		def destroy
+			@picture = Picture.find params[:id]
+			@picture.destroy
+			redirect_to pictures_path
+		end
 	end
 
 
