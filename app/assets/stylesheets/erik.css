@@ -39,15 +39,16 @@ a {
 }
 
 .nav a {
-  color: #a9a9a9;
+  color: #fff;
   font-size: 12px;
-  padding: 0 20px;
+  padding: 7px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .nav a:hover {
-	color: #;
+	background-color: #a9a9a9;
+	padding: 7px;
 }
 
 .error {
